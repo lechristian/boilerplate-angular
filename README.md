@@ -46,7 +46,7 @@ All your angular files should go here. Gulp will concat and uglify all these fil
 
 I use two folder structures for Angular apps depending on project size.
 1)  For smaller applications with fewer models and less logic:
-    `
+    ```
     /directives
         *Put your directives here*
     /services
@@ -58,9 +58,9 @@ I use two folder structures for Angular apps depending on project size.
     /filters
         *Put your filters here*
     app.js
-    `
+    ```
 2)  For larger applications:
-    `
+    ```
     /model1
         model1.js
         *model 1 controllers here*
@@ -83,7 +83,7 @@ I use two folder structures for Angular apps depending on project size.
         *Filters here*
         *Shared directives here*
     app.js
-    `
+    ```
 ###### ./assets/sass/
 `
     /modules
