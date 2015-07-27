@@ -2,7 +2,7 @@
 // server.js
 // ==============================
 
-// modules ----------------------
+// Modules ----------------------
 var express             = require('express');
 var path                = require('path');
 
@@ -15,13 +15,14 @@ var app = express();
 var router = express.Router();
 
 // Static files -----------------
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/dist'));
 
 // Routes -----------------------
 app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, './public', 'index.html'));
+    res.sendFile(path.join(__dirname, './dist', 'index.html'));
 });
 
 // Launch app -------------------
 app.listen(port);
 exports = module.exports = app;
+
