@@ -9,40 +9,59 @@
 > Also leave feedback! I'm always looking to improve.
 
 ## Getting Started
+#### Using Gulp
+I have 2 gulp tasks that I use:
+1. gulp
+    * Used for development.
+    * It does not optimize images (for speed), it compiles source maps for CSS and JS files, it does not uglify js, and it does not compress css.
+    * If you have livereload for chrome, it will automatically refresh the browser on file change.
+    * It will also rebuild your sass or js on file change, it'll copy all libs, html, and images to dist also.
+2. gulp build
+    * Used for production.
+    * It will optimize images
+    * It will compile, minify, uglify, css and js files but will not create source maps
+    * This is for building over, it does not start a local server or watch for changes
+
 #### Libraries, frameworks, and tools I use for my projects
 
 On the backend, I use Node.js and Express.js.
-On the frontend, I use Angular.js, ngTouch, ngAnimate, and ui-router.
+On the frontend, I use Angular.js, ngTouch, and ui-router.
 
 For automation, I use gulp.
-* Gulp helps me quicken my workflow by autocompiling and minifying my `.scss` into `.css` to pushing into the `./public/css/`.
-* Gulp also minifies, concats, and uglifies all my `.js` files and pushed them into the `./public/js/` folder.
-* Lastly, Gulp takes images and optimizes/compressed them and pushed them into `./public/img/`
+* Gulp helps me quicken my workflow by autocompiling and minifying my `.scss` into `.css` to pushing into the `./dist/css/`.
+* Gulp also minifies, concats, and uglifies all my `.js` files and pushed them into the `./dist/js/` folder.
+* Lastly, Gulp takes images and optimizes/compressed them and pushed them into `./dist/assets/img/` folder.
 
 #### Installing new libraries, frameworks, tools
 * To install backend dependencies, open up package.json and add to dependencies object.
     - You'll have to run (sudo) npm install to install new dependencies
     - If you want to remove dependencies, remove them from package.json and delete from `./node_modules`.
-* To install frontend dependencies, open up bower.json and add to dependencies
-    - You'll have to run bower install to install new dependencies
-    - To use in your app, you'll have to drag the dependency into your public/libs folder. I currently have `./public/libs/js` but if you have a css dependency, create a `./public/libs/css` folder and move it there. Do the same for other files types
-    - When deleting, make sure you delete from bower.json, `./public/libs`, and `./bower_components`
+* To install frontend dependencies, I just go download the the `.min.*` file from source. I used to use bower but I found it easier to just download and copy into 'src/libs/{js,css,...}'
+    - To use in your app, you'll have to drag the dependency into your src/libs folder. I currently have `./src/libs/js` but if you have a css dependency, create a `./src/libs/css` folder and move it there. Do the same for other files types
 * To install gulp dependencies, open up package.json and add to dev-dependencies object.
     - Remember to run (sudo) npm install
     - You'll definitely need to read up on how to use Gulp if you're not familiar with it.
 
 ## Directory Structure
 
-#### ./assets
+#### ./src
 
-> The assets folder is where you'll keep your images, scripts (js), and
-> style sheets (scss).
+> Where you'll keep all your frontend stuff: images, js, sass, libs. Pretty much only change files here. 
 
-###### ./assets/img/
-Organize your images here like you would normally. Folder structure will be copied as is into `./public/img/` but images will be optimized and compressed.
+###### ./src/assets/img/
+> Organize your images here like you would normally. Folder structure will be copied as is into `./dist/assets/img/` but images will be optimized and compressed.
 
-###### ./assets/js/
-All your angular files should go here. Gulp will concat and uglify all these files into `./public/js/app.min.js`.
+###### ./src/libs/js/
+> Where you should put your javascript dependencies like Angular.js. Will be copied into `./dist/libs/`
+
+###### ./src/views/
+> Where you should put your partials/views/templates. Files will be copied into `./dist/views`  You index them in your router by `./views/**/*.html` where \*\* can represent no folder or some folder, and \* is your partial name.
+
+###### ./src/index.html
+> Your index. This is where you inject all your depency and the main entry point for your app. File will be copied as `./dist/index.html`
+
+###### ./src/js/
+All your angular files should go here. Gulp will concat and uglify all these files into `./dist/js/app.min.js`.
 
 I use two folder structures for Angular apps depending on project size.
 1)  For smaller applications with fewer models and less logic:
@@ -86,7 +105,9 @@ app.js
     *Shared directives here*
 app.js
 ```
-###### ./assets/sass/
+###### ./src/sass/
+All your sass files should go here. Gulp will concat and minify all these files into `./dist/css/style.min.js`.
+
 `
     /modules
         *Styles of elements on a page (usually span multiple pages)*
@@ -106,29 +127,19 @@ app.js
         *colors, sizes, etc.*
 `
 
-#### ./bower_components
-> This is where your bower dependencies go after you run `bower install`. You'll need to copy the files you need into `/public/**`
-
 #### ./node_modules
-> This is where your npm dependencies will go afte ryou run `(sudo) npm install`
+> This is where your npm dependencies will go after you run `(sudo) npm install`
 
-#### ./public
+#### ./dist
 > This is where you app will actually reside.
 
-###### ./public/css/
+###### ./dist/css/
 > Where your sass will concat and compile into. Don't put anything here.
 
-###### ./public/img/
-> Where you images will go after compressing. Put images in `./assets/img/` instead to be compressed
+###### ./dist/assets/img/
+> Where you images will go after compressing. Put images in `.src/assets/img/` instead to be compressed
 
-###### ./public/js/
+###### ./dist/js/
 > Where your app script will go after being concat and uglified. Don't put anything here.
 
-###### ./public/libs/js/
-> Where you should put your javascript dependencies like Angular.js
 
-###### ./public/views/
-> Where you should put your partials/views/templates. You index them in your router by `./views/**/*.html` where \*\* can represent no folder or some folder, and \* is your partial name.
-
-###### ./public/index.html
-> Your index. This is where you inject all your depency and the main entry point for your app.
