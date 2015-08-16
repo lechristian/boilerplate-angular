@@ -9,16 +9,20 @@
 > Also leave feedback! I'm always looking to improve.
 
 ## Getting Started
+#### Git & Deployment
+You can set up your git and deployment process however works for you but with my workflow and gulp tasks, described below, I found this set works the best.
+
+
 #### Using Gulp
 I have 2 gulp tasks that I use:
 
-1) `gulp`
+1. `gulp`
    - Used for development.
    - It does not optimize images (for speed), it compiles source maps for CSS and JS files, it does not uglify js, and it does not compress css.
    - If you have livereload for chrome, it will automatically refresh the browser on file change.
    - It will also rebuild your sass or js on file change, it'll copy all libs, html, and images to dist also.
 
-2) `gulp build`
+2. `gulp build`
    - Used for production.
    - It will optimize images
    - It will compile, minify, uglify, css and js files but will not create source maps
@@ -66,7 +70,7 @@ All your angular files should go here. Gulp will concat and uglify all these fil
 
 I use two folder structures for Angular apps depending on project size.
 
-1)  For smaller applications with fewer models and less logic:
+1.  For smaller applications with fewer models and less logic:
 
 ```
 /directives
@@ -81,7 +85,7 @@ I use two folder structures for Angular apps depending on project size.
     *Put your filters here*
 app.js
 ```
-2)  For larger applications:
+2.  For larger applications:
 
 ```
 /model1
@@ -111,22 +115,22 @@ app.js
 All your sass files should go here. Gulp will concat and minify all these files into `./dist/css/style.min.js`.
 
 ```
-    /modules
-        *Styles of elements on a page (usually span multiple pages)*
-    /pages
-        *Page specific styles*
-    /vendors
-        *Styles from venders (reset, jeet, etc.)*
-    application.scss
-        *Where you tell which scss files to include in your app. Make sure if you add a new file, you include it here.*
-    base.scss
-        *Your base style - usually styles that apply to every element*
-    mixins.scss
-        *Any sass mixins you want to add go here*
-    text.scss
-        *Text styling mixins*
-    variables.scss
-        *colors, sizes, etc.*
+/modules
+   *Styles of elements on a page (usually span multiple pages)*
+/pages
+   *Page specific styles*
+/vendors
+   *Styles from venders (reset, jeet, etc.)*
+application.scss
+   *Where you tell which scss files to include in your app. Make sure if you add a new file, you include it here.*
+base.scss
+   *Your base style - usually styles that apply to every element*
+mixins.scss
+   *Any sass mixins you want to add go here*
+text.scss
+   *Text styling mixins*
+variables.scss
+   *colors, sizes, etc.*
 ```
 
 #### ./dist
