@@ -12,15 +12,15 @@
 #### Using Gulp
 I have 2 gulp tasks that I use:
 1. gulp
-    * Used for development.
-    * It does not optimize images (for speed), it compiles source maps for CSS and JS files, it does not uglify js, and it does not compress css.
-    * If you have livereload for chrome, it will automatically refresh the browser on file change.
-    * It will also rebuild your sass or js on file change, it'll copy all libs, html, and images to dist also.
+   - Used for development.
+   - It does not optimize images (for speed), it compiles source maps for CSS and JS files, it does not uglify js, and it does not compress css.
+   - If you have livereload for chrome, it will automatically refresh the browser on file change.
+   - It will also rebuild your sass or js on file change, it'll copy all libs, html, and images to dist also.
 2. gulp build
-    * Used for production.
-    * It will optimize images
-    * It will compile, minify, uglify, css and js files but will not create source maps
-    * This is for building over, it does not start a local server or watch for changes
+   - Used for production.
+   - It will optimize images
+   - It will compile, minify, uglify, css and js files but will not create source maps
+   - This is for building over, it does not start a local server or watch for changes
 
 #### Libraries, frameworks, and tools I use for my projects
 
@@ -28,17 +28,17 @@ On the backend, I use Node.js and Express.js.
 On the frontend, I use Angular.js, ngTouch, and ui-router.
 
 For automation, I use gulp.
-* Gulp helps me quicken my workflow by autocompiling and minifying my `.scss` into `.css` to pushing into the `./dist/css/`.
-* Gulp also minifies, concats, and uglifies all my `.js` files and pushed them into the `./dist/js/` folder.
-* Lastly, Gulp takes images and optimizes/compressed them and pushed them into `./dist/assets/img/` folder.
+- Gulp helps me quicken my workflow by autocompiling and minifying my `.scss` into `.css` to pushing into the `./dist/css/`.
+- Gulp also minifies, concats, and uglifies all my `.js` files and pushed them into the `./dist/js/` folder.
+- Lastly, Gulp takes images and optimizes/compressed them and pushed them into `./dist/assets/img/` folder.
 
 #### Installing new libraries, frameworks, tools
-* To install backend dependencies, open up package.json and add to dependencies object.
-    - You'll have to run (sudo) npm install to install new dependencies
-    - If you want to remove dependencies, remove them from package.json and delete from `./node_modules`.
-* To install frontend dependencies, I just go download the the `.min.*` file from source. I used to use bower but I found it easier to just download and copy into 'src/libs/{js,css,...}'
-    - To use in your app, you'll have to drag the dependency into your src/libs folder. I currently have `./src/libs/js` but if you have a css dependency, create a `./src/libs/css` folder and move it there. Do the same for other files types
-* To install gulp dependencies, open up package.json and add to dev-dependencies object.
+- To install backend dependencies, open up package.json and add to dependencies object.
+   - You'll have to run (sudo) npm install to install new dependencies
+   - If you want to remove dependencies, remove them from package.json and delete from `./node_modules`.
+- To install frontend dependencies, I just go download the the `.min.*` file from source. I used to use bower but I found it easier to just download and copy into 'src/libs/{js,css,...}'
+   - To use in your app, you'll have to drag the dependency into your src/libs folder. I currently have `./src/libs/js` but if you have a css dependency, create a `./src/libs/css` folder and move it there. Do the same for other files types
+- To install gulp dependencies, open up package.json and add to dev-dependencies object.
     - Remember to run (sudo) npm install
     - You'll definitely need to read up on how to use Gulp if you're not familiar with it.
 
