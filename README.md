@@ -47,8 +47,7 @@ For automation, I use gulp.
 ## Directory Structure
 
 #### ./src
-
-> Where you'll keep all your frontend stuff: images, js, sass, libs. Pretty much only change files here. 
+Where you'll keep all your frontend stuff: images, js, sass, libs. Pretty much only change files here. 
 
 ###### ./src/assets/img/
 > Organize your images here like you would normally. Folder structure will be copied as is into `./dist/assets/img/` but images will be optimized and compressed.
@@ -130,11 +129,8 @@ All your sass files should go here. Gulp will concat and minify all these files 
         *colors, sizes, etc.*
 ```
 
-#### ./node_modules
-> This is where your npm dependencies will go after you run `(sudo) npm install`
-
 #### ./dist
-> This is where you app will actually reside.
+This is where you app will actually reside after being magically put together by gulp.
 
 ###### ./dist/css/
 > Where your sass will concat and compile into. Don't put anything here.
