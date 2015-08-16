@@ -12,12 +12,13 @@
 #### Using Gulp
 I have 2 gulp tasks that I use:
 
-1) gulp
+1) `gulp`
    - Used for development.
    - It does not optimize images (for speed), it compiles source maps for CSS and JS files, it does not uglify js, and it does not compress css.
    - If you have livereload for chrome, it will automatically refresh the browser on file change.
    - It will also rebuild your sass or js on file change, it'll copy all libs, html, and images to dist also.
-2) gulp build
+
+2) `gulp build`
    - Used for production.
    - It will optimize images
    - It will compile, minify, uglify, css and js files but will not create source maps
