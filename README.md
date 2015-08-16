@@ -111,7 +111,7 @@ app.js
 ###### ./src/sass/
 All your sass files should go here. Gulp will concat and minify all these files into `./dist/css/style.min.js`.
 
-`
+```
     /modules
         *Styles of elements on a page (usually span multiple pages)*
     /pages
@@ -128,7 +128,7 @@ All your sass files should go here. Gulp will concat and minify all these files 
         *Text styling mixins*
     variables.scss
         *colors, sizes, etc.*
-`
+```
 
 #### ./node_modules
 > This is where your npm dependencies will go after you run `(sudo) npm install`
@@ -144,5 +144,3 @@ All your sass files should go here. Gulp will concat and minify all these files 
 
 ###### ./dist/js/
 > Where your app script will go after being concat and uglified. Don't put anything here.
-
-
