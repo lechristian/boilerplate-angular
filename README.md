@@ -11,6 +11,7 @@
 ## Getting Started
 #### Using Gulp
 I have 2 gulp tasks that I use:
+
 1) gulp
    - Used for development.
    - It does not optimize images (for speed), it compiles source maps for CSS and JS files, it does not uglify js, and it does not compress css.
@@ -64,6 +65,7 @@ For automation, I use gulp.
 All your angular files should go here. Gulp will concat and uglify all these files into `./dist/js/app.min.js`.
 
 I use two folder structures for Angular apps depending on project size.
+
 1)  For smaller applications with fewer models and less logic:
 
 ```
