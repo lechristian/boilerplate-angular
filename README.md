@@ -85,6 +85,7 @@ I use two folder structures for Angular apps depending on project size.
     *Put your filters here*
 app.js
 ```
+
 2.  For larger applications:
 
 ```
