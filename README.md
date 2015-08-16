@@ -12,6 +12,13 @@
 #### Git & Deployment
 You can set up your git and deployment process however works for you but with my workflow and gulp tasks, described below, I found this set works the best.
 
+1. Create a branch `develop` and make it your default. So every time you have a new feature, and you want to work on a different branch, branch from develop. Once you're done, merge/rebase/pull request back onto `develop`
+   - For any of these branches you'll be running plain `gulp` it'll auto compile everything for you for development reasons
+
+2. You'll use `master` as the stable branch and the branch you deploy from (whether you use AWS, Heroku, Digital Ocean whatever).
+   - Whenever you're ready to push your changes for deployment, merge `develop` onto `master`.
+   - Run `gulp build` and your app is ready for deployment.
+   - Never make changes directly to `master`, if you have to fix a bug, do it on `develop` and merge again
 
 #### Using Gulp
 I have 2 gulp tasks that I use:
@@ -70,7 +77,7 @@ All your angular files should go here. Gulp will concat and uglify all these fil
 
 I use two folder structures for Angular apps depending on project size.
 
-1.  For smaller applications with fewer models and less logic:
+1)  For smaller applications with fewer models and less logic:
 
 ```
 /directives
@@ -86,7 +93,7 @@ I use two folder structures for Angular apps depending on project size.
 app.js
 ```
 
-2.  For larger applications:
+2)  For larger applications:
 
 ```
 /model1
